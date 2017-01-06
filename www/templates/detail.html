@@ -1,0 +1,18 @@
+<ion-view>
+	<ion-header-bar class="bar-stable">
+		<h1 class="title">Detail Mahasiswa</h1>
+	</ion-header-bar>
+	<ion-content>
+	<ion-refresher on-refresh="doRefresh()"></ion-refresher>
+		<div class="list">
+			<label class="item-input">
+				{{data.nama}}
+			</label>
+			<label class="item-input">
+				{{data.jurusan}}
+			</label>
+			<a class="button button-royal" href="#/update/{{data.nim}}">Ubah</a>
+			<a class="button button-positive" href="#/delete/{{data.nim}}">Hapus</a>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,26 @@
+<ion-view view-title="Tambah Data">
+	<ion-header-bar class="bar-stable">
+		<h1 class="title">Menu</h1>
+	</ion-header-bar>
+	<ion-content padding="true">
+	<form name="frmadd" novalidate ng-submit="frmadd.$valid && tambahData(ctt)">
+		<div class="list">
+			<label class="item">
+				<input type="text" ng-model = "ctt.idmk" name="idmk" required minlength="7" maxlength="7" placeholder="ID Matakuliah">
+			</label>
+	
+			<label class="item">
+				<input type="text" ng-model="ctt.nama" placeholder="Nama Matakuliah">
+			</label>
+	
+			<label class="item">
+				<input type="text" ng-model="ctt.sks" placeholder="SKS">
+			</label>
+			<input class="button button-block button-assertive" type="submit" value="Proses" ng-disabled="!frmadd.$valid">
+		</div>
+	</form>
+	<label class="item" style="color: red" ng-show="frmadd.nim.$error.required"> NIM is required</label>
+	<label class="item" style="color: red" ng-show="frmadd.nim.$error.minlength || frmadd.nim.$error.maxlength"> 7 Karakter</label>
+
+	</ion-content>
+</ion-view>

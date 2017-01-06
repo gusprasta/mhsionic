@@ -1,0 +1,40 @@
+<ion-view>
+	<ion-header-bar class="bar-stable">
+		<h1 class="title">Silakan Login Dahulu</h1>
+	</ion-header-bar>
+	<ion-content  padding="true">
+		<form name="frmlogin" novalidate ng-submit="frmlogin.$valid && loginData(log)">
+			<div class="list">
+				<label class="item item-input">
+				 <span class="input-label">Username</span>
+					<input type="text" ng-model = "log.username" name="username" required minlength="3" maxlength="10" placeholder="Masukan Username">
+				</label>
+		
+				<label class="item item-input">
+				  <span class="input-label">Password</span>
+					<input type="password" required ng-model="log.password" placeholder="Password">
+				</label>
+				<div class="row">
+				 
+				  
+				
+				   <div class="col col-80"></div>
+				  
+
+				     <div class="col"><button  ng-click="loginFB()" class="button icon ion-social-facebook button-positive"></button></div>
+				</div>
+
+
+
+
+				<input class="button button-block button-assertive" type="submit" value="Sign In" ng-disabled="!frmlogin.$valid">
+				<a class="button button-block button-calm"  href="#signup">Sign Up</a>
+
+
+			</div>
+		</form>
+		<label class="item" style="color: red" ng-show="frmlogin.username.$error.required"> Username is required</label>
+	
+		<label class="item" style="color: red" ng-show="frmlogin.username.$error.minlength || frmlogin.username.$error.maxlength"> > 3 Karakter</label>
+	</ion-content>
+</ion-view>
